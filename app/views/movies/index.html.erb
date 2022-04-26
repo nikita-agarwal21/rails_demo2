@@ -1,14 +1,41 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Movies</h1>
-<table >
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>genre</th>
+      <th>available</th>
+      <th>price</th>
+     <th> </th>
+     <th> </th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+     
+      <tr>
+        <td>
+        <%= movie.name %>
+
+
+        </td>
+        
+        <td><%= movie.genre %></td>
+        <td><%= movie.price %></td>
+        <td><%= movie.available %></td>
+        
+        
+        <td><%= link_to "Show this movie", movie %>
+</td>        
+        
+        <td><%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+        
+      </tr>
+      <% end %>
+    
+  </tbody>
 </table>
-<%= link_to "New movie", new_movie_path %>
+<br>
+<%= link_to 'New movie', new_movie_path, class:"btn btn-secondary" %>
