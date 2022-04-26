@@ -1,31 +1,20 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @movie %>
-
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
-</div>
-
 
 <div class="jumbotron">
   <h1 class="display-4">
-    <%= @friend.first_name %>
-    <%= @friend.last_name %>
+    <%= @movie.name %>
+   
   </h1>
   <p class="lead">
-    <%= @friend.email %>  | 
-    <%= @friend.phone %>  |  
-    <%= @friend.twitter %>
-
+    
+    <%= @movie.genre %>  |  
+    <%= @movie.available %> |
+    <%= @movie.price %>  
   </p>
   <br/>
 
-  <%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-secondary" %>
-<%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <%= link_to 'Edit', edit_movie_path(@movie), class:"btn btn-secondary" %>
+<%= link_to 'Delete', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
    
-<%= link_to 'Back', friends_path, class:"btn btn-dark" %>
+<%= link_to 'Back', movies_path, class:"btn btn-dark" %>
 
 </div>
